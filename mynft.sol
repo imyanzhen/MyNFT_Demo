@@ -7,7 +7,7 @@ contract SimpleNFT {
    string public tokenSymbol;
   
    mapping(uint256 => address) public ownerOf;
-   mapping(uint256 => bool) private exists;
+   mapping(uint256 => bool) public exists;
    mapping(uint256 => address) private approvals;
    
  
@@ -19,6 +19,7 @@ contract SimpleNFT {
     function mint(address _to, uint256 _tokenId) public returns (uint256) {
         require(exists[_tokenId] != true);
         ownerOf[_tokenId] = _to;
+        //
         return _tokenId;
     }
    
