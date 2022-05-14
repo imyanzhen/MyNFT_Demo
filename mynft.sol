@@ -34,7 +34,7 @@ contract SimpleNFT {
    
     function transfer(address _to, uint256 _tokenId) public returns (uint256){
         
-        require(msg.sender == ownerOf[_tokenId] || msg.sender == approvals[_tokenId]);
+        //
         require(_to != address(0));
         //
         //
